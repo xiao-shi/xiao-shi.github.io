@@ -1,0 +1,12 @@
+---
+title: "xiao-shi-githubio"
+author: "Xiao Shi"
+date: "October 18, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### I have a website!
