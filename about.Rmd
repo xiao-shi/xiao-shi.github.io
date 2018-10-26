@@ -10,5 +10,5 @@ title: "About"
 
 Here is a super cool photo of me doing one of my favorite things, sailing! 
 
-![](../me_sailing.jpg)
+![](./me_sailing.jpg)
 
