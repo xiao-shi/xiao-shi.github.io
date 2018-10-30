@@ -1,8 +1,9 @@
 ---
-title: "Dashboard"
+title: "Dashboard of New York Weather"
 output: 
   flexdashboard::flex_dashboard:
-  vertical_layout: scroll
+    orientation: columns
+    vertical_layout: fill
 ---
 
 ```{r setup, include=FALSE}
@@ -14,13 +15,8 @@ library(p8105.datasets)
 library(plotly)
 ```
 
-```{r data original summary}
-skimr::skim(ny_noaa)
-```
-The ny noaa data were accessed from the NOAA National Climatic Data Center, consisting of `r nrow(ny_noaa)` rows and `r ncol(ny_noaa)`. Key variables include date by `date`, prcipitation by `prcp`, snowfall by `snow`, depth of snow by `snwd`, highest temparture by `tmax`, and lowest temparture by `tmin`. For `tmax` and `tmin`, `r mean(is.na(ny_noaa$tmax))` of the data is missing, which is a big problem if we are trying to calculate temparature related results because we cannot be sure whether the missing data would lead to a different result.
 
-**data cleaning**
-```{r p3 data cleaning}
+```{r p3 data cleaning, include=FALSE}
 ny_noaa_cleaned = separate(ny_noaa, date, into = c("year", "month", "day"), sep = "-") %>%
   mutate(tmax = as.integer(tmax)) %>%
   mutate(tmax = tmax/10) %>%
@@ -28,11 +24,7 @@ ny_noaa_cleaned = separate(ny_noaa, date, into = c("year", "month", "day"), sep 
   mutate(tmin = tmin/10) %>%
   mutate(prcp = prcp/10) %>%
   sample_n(5000)
-skimr::skim(ny_noaa_cleaned)
-
 ```
-
-**NYC average minimum temperature in Jan and July**
 
 Column {data-width=650}
 -----------------------------------------------------------------------
@@ -67,7 +59,6 @@ ny_noaa_cleaned %>%
           colors = "Set2")
 ```
 
-Column {data-width=350}
 -----------------------------------------------------------------------
 
 ### Chart C
@@ -77,9 +68,5 @@ ny_noaa_cleaned %>%
   count(id) %>% 
   mutate(id = fct_reorder(id, n)) %>% 
   plot_ly(x = ~id, y = ~n, color = ~id, type = "bar")
-nyc_airbnb %>% 
-  count(neighbourhood) %>% 
-  mutate(neighbourhood = fct_reorder(neighbourhood, n)) %>% 
-  plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar")
 ```
 
