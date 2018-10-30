@@ -1,0 +1,17 @@
+---
+title: "Xiao Shi"
+---
+
+### the best *sailor* according to herself,
+### has a webpage!
+## ---------------------------------------
+    
+## My Linkedin
+[Xiao Shi Linkedin](https://www.linkedin.com/in/xiao-shi-6ab704a6/)
+
+## My Resume 
+
+<img src="./images/XS_Resume.jpg" style="width:100%">
+
+*Check out more about me on my* [about page](about.html)
+

@@ -1,0 +1,13 @@
+---
+title: "About"
+---
+
+### About this site
+
+- __Name:__ Xiao Shi
+- __Occupation:__ Columbia University Medical Center Grad Student
+- __Hobbies:__ Analyzing cool clinical data instead of studying for exams. 
+
+Here is me doing one of my favorite sports, sailing! 
+
+<img src="./images/me_sailing.jpg" style="width:50%">
