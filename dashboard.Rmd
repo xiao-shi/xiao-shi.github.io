@@ -29,7 +29,7 @@ ny_noaa_cleaned = separate(ny_noaa, date, into = c("year", "month", "day"), sep 
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Jan and July max temperature
 ```{r}
 tmax_jan_july = select(ny_noaa_cleaned, id, year, month, tmax, tmin, prcp) %>%
   filter(month == "01" | month == "07") %>%
@@ -49,7 +49,7 @@ tmax_jan_july %>%
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Precipitation in the past decade
 
 ```{r}
 ny_noaa_cleaned %>%
@@ -61,7 +61,7 @@ ny_noaa_cleaned %>%
 
 -----------------------------------------------------------------------
 
-### Chart C
+### Number of data points by station
 
 ```{r}
 ny_noaa_cleaned %>% 
